@@ -1,0 +1,471 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="عبدالله للبرمجيات - تصميم المواقع وتطبيقات الويب والتسويق الإلكتروني والهويات التجارية.">
+  <title>عبدالله للبرمجيات | حلول رقمية مبتكرة</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --primary: #087cf0;
+      --dark: #071426;
+      --light: #f5f9ff;
+      --text: #26364a;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    header {
+      background: rgba(7,20,38,.97);
+      color: white;
+      padding: 17px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 800;
+      color: white;
+    }
+
+    .logo span {
+      color: #35a4ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a:hover {
+      color: #35a4ff;
+    }
+
+    .hero {
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      color: white;
+      background:
+        radial-gradient(circle at 15% 20%, #087cf044, transparent 35%),
+        linear-gradient(135deg, #071426, #102d50);
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(35px, 6vw, 58px);
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #35a4ff;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #d3e4f8;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: var(--primary);
+      color: white;
+      border-radius: 9px;
+      font-weight: 700;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      background: #0564c4;
+      transform: translateY(-3px);
+    }
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      color: var(--dark);
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #75849a;
+    }
+
+    .about {
+      background: var(--light);
+      text-align: center;
+    }
+
+    .about-content {
+      max-width: 800px;
+      margin: auto;
+      font-size: 18px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+    }
+
+    .service-card {
+      padding: 30px 22px;
+      border: 1px solid #e7edf5;
+      border-radius: 15px;
+      text-align: center;
+      transition: .3s;
+      background: white;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 12px 35px #0b37651a;
+      border-color: #9ccfff;
+    }
+
+    .service-icon {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .service-card h3 {
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #75849a;
+      font-size: 14px;
+    }
+
+    .why {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+    }
+
+    .why .section-title h2 {
+      color: white;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+    }
+
+    .why-item {
+      padding: 20px;
+    }
+
+    .why-item h3 {
+      color: #45aaff;
+      margin-bottom: 10px;
+    }
+
+    .portfolio {
+      background: var(--light);
+      text-align: center;
+    }
+
+    .portfolio-box {
+      background: white;
+      padding: 45px 20px;
+      border-radius: 15px;
+      border: 1px dashed #9bb8d8;
+      color: #64758b;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      margin-bottom: 25px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .whatsapp {
+      background: #20b968;
+    }
+
+    footer {
+      background: #071426;
+      color: #c6d3e3;
+      padding: 25px 0;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media(max-width: 700px) {
+      nav {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 13px;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 13px;
+      }
+
+      .hero {
+        min-height: 500px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#" class="logo">عبدالله <span>للبرمجيات</span></a>
+
+      <ul class="nav-links">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#about">من نحن</a></li>
+        <li><a href="#services">خدماتنا</a></li>
+        <li><a href="#portfolio">أعمالنا</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>نصنع لك حضوراً رقمياً <span>يليق بطموحك</span></h1>
+      <p>
+        عبدالله للبرمجيات، نقدم حلولاً رقمية مبتكرة
+        في تصميم المواقع وتطوير التطبيقات والتسويق
+        وصناعة الهويات التجارية.
+      </p>
+      <a href="#services" class="btn">اكتشف خدماتنا</a>
+      <a href="#contact" class="btn" style="background:transparent;border:1px solid white;margin-right:8px">تواصل معنا</a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>من نحن</h2>
+        <p>شريكك في التحول الرقمي والإبداع التقني</p>
+      </div>
+
+      <div class="about-content">
+        <p>
+          أنا عبدالله، أقدم خدمات رقمية وبرمجية تساعد الأفراد
+          والشركات على تطوير حضورهم الإلكتروني.
+          أعمل على تحويل الأفكار إلى مشاريع رقمية عصرية
+          تجمع بين الإبداع والاحترافية وسهولة الاستخدام.
+          هدفي تقديم حلول تساعدك على إبراز علامتك التجارية
+          والوصول إلى جمهورك بطريقة مميزة.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>خدماتنا</h2>
+        <p>حلول متكاملة لتطوير أعمالك رقمياً</p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3>تصميم المواقع</h3>
+          <p>تصميم وتطوير مواقع إلكترونية احترافية ومتجاوبة مع جميع الأجهزة.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">💻</div>
+          <h3>تطبيقات الويب</h3>
+          <p>إنشاء تطبيقات ويب عصرية تساعدك على إدارة أعمالك وتطوير خدماتك.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <h3>التسويق الإلكتروني</h3>
+          <p>حلول تسويقية رقمية لتعزيز حضورك والوصول إلى جمهورك المستهدف.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3>الهويات التجارية</h3>
+          <p>تصميم هويات بصرية احترافية تعكس شخصية علامتك التجارية.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">✨</div>
+          <h3>بناء العلامات التجارية</h3>
+          <p>تطوير العلامات التجارية وصناعة صورة مميزة لمشروعك.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🚀</div>
+          <h3>تطوير المواقع القديمة</h3>
+          <p>تحديث المواقع الإلكترونية القديمة وتحويلها إلى واجهات عصرية.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="container">
+      <div class="section-title">
+        <h2>لماذا تختار عبدالله للبرمجيات؟</h2>
+        <p style="color:#b8c9dd">نهتم بالتفاصيل ونصنع الفرق</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-item">
+          <h3>الإبداع</h3>
+          <p>أفكار وتصاميم مبتكرة تناسب مشروعك.</p>
+        </div>
+
+        <div class="why-item">
+          <h3>الاحترافية</h3>
+          <p>اهتمام بالجودة والتفاصيل في كل مشروع.</p>
+        </div>
+
+        <div class="why-item">
+          <h3>التطوير المستمر</h3>
+          <p>نواكب التقنيات الحديثة والحلول الرقمية.</p>
+        </div>
+
+        <div class="why-item">
+          <h3>تجربة مميزة</h3>
+          <p>واجهات سهلة الاستخدام وتجربة سلسة للعملاء.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-title">
+        <h2>أعمالنا</h2>
+        <p>نماذج من أعمالنا ومشاريعنا الرقمية</p>
+      </div>
+
+      <div class="portfolio-box">
+        <h3>مساحة مخصصة لمشاريعنا</h3>
+        <p>سيتم إضافة نماذج الأعمال والمشاريع هنا قريباً.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>لنبدأ مشروعك معاً</h2>
+        <p>هل لديك فكرة أو مشروع؟ يسعدني التواصل معك.</p>
+      </div>
+
+      <p>تواصل معي لمناقشة مشروعك والحصول على الحل المناسب.</p>
+
+      <div class="contact-buttons">
+        <!-- استبدل الرقم برقم واتساب الخاص بك مع مفتاح الدولة -->
+        <a class="btn whatsapp"
+           href="https://wa.me/9665XXXXXXXX"
+           target="_blank" rel="noopener">
+          تواصل عبر واتساب
+        </a>
+
+        <a class="btn"
+           href="mailto:info@example.com">
+          البريد الإلكتروني
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>© <span id="year"></span> عبدالله للبرمجيات - جميع الحقوق محفوظة</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
